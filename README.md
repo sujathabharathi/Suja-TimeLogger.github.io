@@ -1,37 +1,14 @@
-## Welcome to GitHub Pages
+## Welcome to TimeLogger Project
 
-You can use the [editor on GitHub](https://github.com/sujathabharathi/Suja-TimeLogger.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+# Instructions
+- You can do Manual entry of start and stop time
+- Automatic time tracking facility.
+- By uploading the CSV file. (example Use TimeLog.CSV)
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+# Project Features
+- This Project mainly used as a Time Tracking system, and this Provides the 
+  details of total,Average and Correlation coefficiency results.
+- This project is designed to provide the notification for taking break.
+- Coded using JavaScript(ES6), AngularJS and designed using HTML5, CSS, Bootstrap.
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/sujathabharathi/Suja-TimeLogger.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+PLEASE USE THE PROVIDED LINK TO DOWNLOAD THE CODE
