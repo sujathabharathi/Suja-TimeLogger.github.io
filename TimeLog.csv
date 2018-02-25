@@ -1,0 +1,23 @@
+PSP Time Recording Log,,,,,,,
+Student,Sujatha Bharathi .S,,,,,,
+Program,PSP assignment -2,,,,,,
+Instructor,Amit Sarkar / Luofeng Xu,,,,,,
+Date,22/08/2017 to 29/08/2017,,,,,,
+,,,,,,,
+Project,Phase,Date,Start,IntTime,Stop,DeltaTime,Comments
+adding code to upload the file by using example,coding,22/08/2017,17.11,0,17.34,0.33,changed some of its index values and loops to get it worked
+planning for doing the other process by using PSP1 changed into Angular format,Planning,22/08/2017,17.34,0,17.48,0.24,understanding of what I ned to do next
+adding some more function in Company class to do the Absolute Average Deviation calutaion,coding,22/08/2017,17.48,0,18.1,0.32,adding coding for calculation
+checking errors after added,checking,22/08/2017,18.1,0,18.4,0.5,found some errors and changed them
+converting the HTML file with javascript to Angular JS,coding,23/08/2017,16.45,0,16.55,0.2,added index.html with angular file
+still working on the Angular type of web form,coding,23/08/2017,16.55,0.2,18.36,1.51,adding all codings related 
+adding functions for Add and Delete buttons using angular JS,coding,23/08/2017,18.36,0,18.52,0.26,Working on Angular Format
+Continue to do with coding in Company class to do  Calculation,coding / checking,23/08/2017,18.52,0,19.2,0.48,After done checking for uploading and display the corret deviation result
+started creating web application,coding/ designing,24/08/2017,20.15,0.26,21.3,0.89,created web application with needs
+created css file,coding,24/08/2017,21.3,0,21.5,0.3,created css file to make he display of the web application better
+started adding fucntion for add the values in the table,coding/ analysing,24/08/2017,22.23,0,23.36,1.23,searching in w3schools and stack overflow websites for the sample and started coding the functions
+fuction for display and delete,coding/ analysing,25/08/2017,23.36,0,23.59,0.33,separate function for display and delete 
+continued with the coding for display,coding,28/08/2017,1.15,0,1.3,0.25,still working on the above to achive the correct format of output
+checking the functions add and display function,coding /checking,28/08/2017,1.3,0,2.1,0.7,checking with input and output displays
+testing the final project and jshint and jsbeautifier works,testing,29/08/2017,20.46,0,21.2,0.54,"testing, aligning, error checking"
+documentation fillups ,texting,29/08/2017,22.3,0,23.46,1.26,final documentations

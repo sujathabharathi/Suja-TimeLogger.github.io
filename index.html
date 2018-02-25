@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+	  <title>TIMER</title>
+		  <meta charset="utf-8">
+		  <meta name="viewport" content="width=device-width, initial-scale=1">
+		  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+		  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">  
+		  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>  
+		  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>  
+		  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	</head>
+
+<body data-ng-app="myApp" id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50" onload="myVar = setTimeout(myBreak,200000)">
+  <div data-ng-controller="MainCtrl as mc">
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header" style="display:flex;">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">					                     
+		  </button>
+          <img src="images/tlogo.png" alt="timerlogo" style="height:10%; width:10%;">
+          <a class="navbar-brand" href="#myPage">TIMER</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav navbar-right">
+		  
+            <li><a href="#myPage"> <span class="glyphicon glyphicon-home"></span>Home</a></li>
+			
+            <li><a href="#automatic"> <span class="glyphicon glyphicon-play"></span>Automatic</a></li>
+			
+            <li> <a href="#manual"><span class="glyphicon glyphicon-user"></span>Manual</a></li>
+			
+            <li><a href="#upload"><span class="glyphicon glyphicon-upload"></span>Upload</a></li>
+			
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="3"></li>
+        <li data-target="#myCarousel" data-slide-to="4"></li>
+      </ol>
+
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <img src="images/timer1.jpg" alt="timer1" width="1200" height="500">
+          <div class="carousel-caption">
+            <h2> New TimeSheet</h2>
+            <p> in an automatic or manual way of entry
+              <p>
+          </div>
+        </div>
+
+        <div class="item">
+          <img src="images/timer2.jpg" alt="timer2" width="1200" height="500">
+          <div class="carousel-caption">
+            <h3>New System</h3>
+            <p> For your Projects
+              <p>
+          </div>
+        </div>
+        <div class="item">
+          <img src="images/timer3.jpg" alt="timer3" width="1200" height="500">
+          <div class="carousel-caption">
+            <h3>Experience</h3>
+            <p> The Time in a new way!
+              <p>
+          </div>
+        </div>
+        <div class="item">
+          <img src="images/timer4.jpg" alt="timer4" width="1200" height="500">
+          <div class="carousel-caption">
+            <h2>Easy Usage</h2>
+            <p>best and easy way for the time calculations
+              <p>
+          </div>
+        </div>
+        <div class="item">
+          <img src="images/timer5.jpg" alt="timer" width="1200" height="500">
+          <div class="carousel-caption">
+            <h2>Service</h2>
+            <p>We provide Best service for You for Save the TIME!
+              <p>
+          </div>
+        </div>
+      </div>
+      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span></a>
+	  
+      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span></a>
+	  
+    </div>
+
+    <!--- for Automatic" -->
+
+    <div id="automatic" class="container text-center">
+      <h3>The Automatic Timer</h3>
+      <p><em>Make the Time Run For You!</em></p>
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="panel panel-default">
+            <div class="panel-heading">Today</div>
+            <div class="panel-body text-center">
+              <div class="">
+                <p><span id="datet"></span></p>
+                <div onload="startTime()" id="time"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br/>
+
+        <div class="col-sm-4">
+		 <p id='timer'>00:00:00:00</p>		 
+		  <div id='controls'>
+            <button class="btn" onclick='startTimer();startTiming()' id='go'>Go</button>		
+            <button class="btn" onclick='stopTimer();stopTiming()' id='stopt'>Stop</button>
+            <button class="btn" onclick='clearTimer()' id='clear'>Clear</button>
+          </div>
+		   <br/>
+		   <br/>
+		 
+		 <div class="panel panel-default">
+			<div class="panel-heading"><h3> Record Your Time Laps </h3></div>
+			 <div class="panel-body text-center">
+			  <div class="">
+					  
+				  <div class="form-group">
+					 <label for="newPro"><span class="glyphicon glyphicon-hand-down"></span>Project</label>
+					 <input type ="text" id ='newPro' class="form-control" required>
+					 
+				 </div>
+				 
+				 <div class="form-group">
+					 <label for="newPhase"><span class="glyphicon glyphicon-hand-down"></span>Phase</label>
+					 <input type ="text" id ='newPhase' class="form-control" required>
+				 </div>
+				 
+				 <div class="form-group">
+					 <label for="st"><span class="glyphicon glyphicon-hand-down"></span>Start Time</label>
+					 <input type ="text" id ='st' value="00:00:00:00" class="form-control" readonly>
+				 </div>
+				 
+				 <div class="form-group">
+					 <label for="sto"><span class="glyphicon glyphicon-hand-down"></span>Phase</label>
+					 <input type ="text" id ='sto' value="00:00:00:00" class="form-control" readonly>		 
+				 </div>
+				
+				 <button onclick="addTiming()" class="btn btn-success"><span class="glyphicon  glyphicon-floppy-save"></span>Record</button>
+				 <br/>
+				 <br/>
+				</div>
+			  </div>
+			</div>
+	
+		 <div class="panel panel-default">
+           <div class="panel-heading">Recorded Time Laps</div>
+            <div class="panel-body text-center">
+              <div class="">
+				 <table id ="timetable" class="table table-hover table-striped">
+				  <thead>
+					<tr>
+						<td>Project</td>
+						<td>Phase</td>
+						<td>Date</td>
+						<td>Start Time</td>
+						<td>Stop Time</td>
+					</tr>
+					</thead>
+				 </table>        
+				</div>
+			</div>
+			</div>
+			</div>
+        </div>
+      </div>
+  
+
+
+    <!-- Container (Manual Section) -->
+    <div id="manual" class="bg-1">
+      <div class="container">
+        <h3 class="text-center">Manual Entry</h3>
+        <p class="text-center">Please Fill the Details</p>
+        <br/>
+        <div class="row text-center">
+          <div class="col-sm-12">
+            <button class="btn" data-toggle="modal" data-toggle="tooltip" title="New Project Details" data-target="#myModal"> <span class="glyphicon glyphicon-plus"></span>  Add New Project Details</button>
+          </div>
+          <div class="col-sm-12">
+            <button class="btn" data-ng-click="mc.show()" data-toggle="tooltip" title="See Details" ><a href="#table1"> <span class="glyphicon glyphicon-ok"></span> Show</a></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project Detailss-->
+      <div class="modal fade" data-spy="scroll" data-target="#myModal" data-offset="50" id="myModal" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">×</button>
+              <img src="images/tlogo.png" alt="timerlogo" style="height:15%; width:10%;">
+              <h4>New Project</h4>
+            </div>
+
+            <div class="modal-body">
+
+              <form name ="form" novalidate>
+
+                <div class="form-group">
+                  <label for="project"><span class="glyphicon glyphicon-hand-down"></span> Project </label>
+                  <input type="text" class="form-control" name="proj" 
+				  id="project" data-ng-model="mc.project" placeholder="Project Name..." required="" />			 
+                </div>
+				 <div ng-show="form.$submitted || form.proj.$touched">
+				  <div ng-show="form.proj.$error.required">Please Add Project Name.</div>
+				</div>
+
+                <div class="form-group">
+                  <label for="phase"><span class="glyphicon glyphicon-hand-down"></span>Phase</label>
+                  <input type="text" class="form-control" name = "phase" id="phase" data-ng-model="mc.phase" placeholder="Phase of Project..." required="" />
+                </div>
+				
+				 <div ng-show="form.$submitted || form.phase.$touched">
+				  <div ng-show="form.phase.$error.required">Please Add Phase Name.</div>
+				</div>
+
+                <div class="form-group">
+                  <label for="date"><span class="glyphicon glyphicon-hand-down"></span>Date</label>
+                  <input type="date" class="form-control" id="date" data-ng-model="mc.date">
+                </div>
+				
+
+                <div class="form-group">
+                  <label for="start"><span class="glyphicon glyphicon-hand-down"></span>Start Time</label>
+                  <input type="text" pattern="([01]?[0-9]{1}|2[0-3]{1}).[0-9]{1}[0-9]{1}" class="form-control" name ="start" id="start" data-ng-model="mc.start" placeholder="24.00-Format" required="" />
+                </div>
+				
+				<div ng-show="form.$submitted || form.start.$touched">
+				  <div ng-show="form.start.$error.required">Please Add Start Time.</div>
+				</div>
+
+                <div class="form-group">
+                  <label for="intTime"><span class="glyphicon glyphicon-hand-down"></span>Interuption Time</label>
+                  <input type="text" pattern="([01]?[0-9]{1}|2[0-3]{1}).[0-9]{1}[0-9]{1}" class="form-control" name="intTime" id="intTime" data-ng-model="mc.intTime" placeholder="24.00-Format" required="">
+                </div>
+
+				<div ng-show="form.$submitted || form.intTime.$touched">
+				  <div ng-show="form.intTime.$error.required">Please Add Int Time.</div>
+				</div>
+				
+                <div class="form-group">
+                  <label for="stop"><span class="glyphicon glyphicon-hand-down"></span>Stop Time</label>
+                  <input type="text" pattern="([01]?[0-9]{1}|2[0-3]{1}).[0-9]{1}[0-9]{1}" class="form-control" name ="stop" id="stop" data-ng-model="mc.stop" placeholder="24.00-Format" required="">
+                </div>
+
+				<div ng-show="form.$submitted || form.stop.$touched">
+				  <div ng-show="form.stop.$error.required">Please Add stop Time.</div>
+				</div>
+				
+                <div class="form-group">
+                  <label for="delta"><span class="glyphicon glyphicon-hand-down"></span>Delta Time</label>
+                  <input type="text" pattern="([01]?[0-9]{1}|2[0-3]{1}).[0-9]{1}[0-9]{1}" onclick="diff()" class="form-control" name ="delta" id="delta" data-ng-model="mc.delta" placeholder="24.00-Format" required ="">
+                </div>
+
+				
+				<div ng-show="form.$submitted || form.delta.$touched">
+				  <div ng-show="form.delta.$error.required">Please Add delta Time.</div>
+				</div>
+				
+                <div class="form-group">
+                  <label for="comments"><span class="glyphicon glyphicon-hand-down"></span>Delta Time</label>
+                  <textarea class="form-control" rows="3" id="comments" data-ng-model="mc.comments" placeholder="Comments..." required></textarea>
+                </div>
+
+                <div class="modal-footer">
+                  <button type="submit" data-ng-click="mc.addEntry()"  data-toggle="tooltip" title="Adding New Project Details" class="btn btn-success btn-default">Submit
+					<span class="glyphicon glyphicon-ok"></span></button>
+                  <button type="submit" class="btn btn-danger btn-default" data-dismiss="modal">
+				<span class="glyphicon glyphicon-remove"></span> Cancel	</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Container (upload Section) -->
+    <div id="upload" class="container">
+      <h3 class="text-center">Upload File</h3>
+      <p class="text-center"><em>We love to Reduce Your WorkLoad!</em></p>
+      <br/>
+
+      <div class="col-sm-12">
+        <form>
+
+          <label for="timefile" class="form-control text-center"> <span class="glyphicon glyphicon-upload"></span>  Upload Your TimeSheet File</label>
+		  
+          <input type="file" id="timefile" class="form-control" style="visibility:hidden" data-on-read-file="mc.showContent(fileContent)">
+
+          <button type="submit" class="btn btn-block" data-ng-click="mc.show()" data-toggle="tooltip" title="See Details" onclick="loadFileAsText()">Show 
+                <span class="glyphicon glyphicon-ok"></span>
+              </button>
+        </form>
+      </div>
+      <hr>
+      <br/>
+
+      <div id='table1' style='display:none'>
+
+        <br>
+
+        <h3 class="text-center">TimeLog Details</h3>
+
+        <div class="col-sm-4">
+          <h5>{{mc.timeLog.allMyTitles[0]}}</h5>
+          <h5>Student: {{mc.timeLog.allMyTitles[1]}}</h5>
+          <h5>Program: {{mc.timeLog.allMyTitles[2]}}</h5>
+          <h5>Instructor: {{mc.timeLog.allMyTitles[3]}}</h5>
+          <h5>Date:{{mc.timeLog.allMyTitles[4]}}</h5>
+        </div>
+
+        <br/>
+        <br/>
+
+        <div class="table-wrapper">
+          <table data-ng-if="mc.timeLog" class="table table-hover table-striped">
+            <thead>
+              <tr>
+                <td>Project</td>
+                <td>Phase</td>
+                <td>Date</td>
+                <td>Start Time</td>
+                <td>Interuption Time</td>
+                <td>Stop Time</td>
+                <td>Delta Time</td>
+                <td>Comments</td>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr data-ng-repeat="time in mc.timeLog.allMyTimes" contenteditable="false">
+                <td data-ng-class="'time' + $index" ng-attr-id="{{time +'project'}}">{{time.project}}</td>
+                <td data-ng-class="'time' + $index" ng-attr-id="{{time +'phase'}}">{{time.phase}}</td>
+                <td data-ng-class="'time' + $index" ng-attr-id="{{time +'date'}}">{{time.date | date:medium}}</td>
+                <td data-ng-class="'time' + $index" ng-attr-id="{{time +'start'}}">{{time.start}}</td>
+                <td data-ng-class="'time' + $index" ng-attr-id="{{time +'intTime'}}">{{time.intTime}}</td>
+                <td data-ng-class="'time' + $index" ng-attr-id="{{time +'stop'}}">{{time.stop}}</td>
+                <td data-ng-class="'time' + $index" ng-attr-id="{{time +'delta'}}">{{time.delta}}</td>
+                <td data-ng-class="'time' + $index" ng-attr-id="{{time +'comments'}}">{{time.comments}}</td>
+
+                <td><button data-ng-click="mc.timeLog.allMyTimes.splice($index, 1)" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button>
+
+                  <button data-ng-attr-id="{{'edit'+$index}}" data-ng-click="mc.editRow('time' + $index, 'edit' + $index, 'notEditable' + $index)" class="btn btn-info"><span class="glyphicon glyphicon-pencil"></span></button>
+
+                  <button ng-attr-id="{{'notEditable' + $index}}" class="btn btn-success" style="display:none"><span class="glyphicon  glyphicon-floppy-save"></span></button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div>
+          <h3>Total & Average</h3>
+
+          <h5 data-ng-if="mc.timeLog.getSumIntTime()"> The Total Interuption Time : {{mc.timeLog.getSumIntTime()}}</h5>
+          <h5 data-ng-if="mc.timeLog.getSumDeltaTime()"> The Total Delta Time : {{mc.timeLog.getSumDeltaTime()}}</h5>
+          <h5 data-ng-if="mc.timeLog.getAvgIntTime()"> The Average Interuption Time : {{mc.timeLog.getAvgIntTime()}}</h5>
+          <h5 data-ng-if="mc.timeLog.getAvgDeltaTime()"> The Average Interuption Time : {{mc.timeLog.getAvgDeltaTime()}}</h5>
+
+          <h3>Correlation coefficient</h3>
+          <!-- <h5 data-ng-if="mc.timeLog.getIntXvalue()"> Ex {{mc.timeLog.getIntXvalue()}}</h5>
+						<h5 data-ng-if="mc.timeLog.getdeltaYvalue()"> Ey  {{mc.timeLog.getdeltaYvalue()}}</h5>
+						<h5 data-ng-if="mc.timeLog.getTotal_Int_Mul_Deltavalue()"> EXY  {{mc.timeLog.getTotal_Int_Mul_Deltavalue()}}</h5>
+						<h5 data-ng-if="mc.timeLog. getTotal_Int_Mul_IntValue()"> EX2 {{mc.timeLog. getTotal_Int_Mul_IntValue()}}</h5>
+						<h5 data-ng-if="mc.timeLog. getTotal_delv_Mul_delValue()"> EY2 {{mc.timeLog. getTotal_delv_Mul_delValue()}}</h5> -->
+          <h5 data-ng-if="mc.timeLog. getCoeffecient()"> Correlation Coefficient Value is : {{mc.timeLog.getCoeffecient()}}</h5>
+        </div>
+        <br/>
+
+        <div class="col-sm-12">
+          <button class="btn" onclick="saveTextAsFile()"> <span class="glyphicon glyphicon-save-file"></span> Save File</button>
+          <button class="btn" data-ng-click="mc.timeLog.allMyTimes = []"> <span class="glyphicon glyphicon-trash"></span> Delete All</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-center">
+    <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
+    <span class="glyphicon glyphicon-chevron-up"></span></a><br><br>
+    <p>Go Home</p>
+  </footer>
+  
+  <script>
+  
+  function startTiming()
+{
+let a = document.getElementById('timer').innerHTML
+document.getElementById('st').value =a;
+console.log(a);
+return a;
+}
+
+function stopTiming()
+{
+let aa = document.getElementById('timer').innerHTML
+document.getElementById('sto').value =aa;
+console.log(aa);
+return aa;
+}
+
+function addTiming()
+{
+let startT = document.getElementById('st').value,
+	stopT =document.getElementById('sto').value,
+	proj =document.getElementById('newPro').value,
+	newPhase =document.getElementById('newPhase').value;
+	
+var table = document.getElementById('timetable'),
+newRow = table.insertRow(table.rows.length);
+
+var cell = newRow.insertCell(0),
+	cell1 = newRow.insertCell(1),
+	cell2 = newRow.insertCell(2),
+	cell3 = newRow.insertCell(3),
+	cell4 = newRow.insertCell(4);
+	let today = new Date();
+	
+	let month = new Array();
+    month[0] = "1";
+    month[1] = "2";
+    month[2] = "3";
+    month[3] = "4";
+    month[4] = "5";
+    month[5] = "6";
+    month[6] = "7";
+    month[7] = "8";
+    month[8] = "9";
+    month[9] = "10";
+    month[10] = "11";
+    month[11] = "12";
+
+	let now = today.getDate()+"/"+ month[today.getMonth()]+"/"+today.getFullYear();
+	
+	cell.innerHTML = proj;
+	cell1.innerHTML = newPhase;
+	cell2.innerHTML = now;
+	cell3.innerHTML = startT;
+	cell4.innerHTML =stopT;	
+	
+	document.getElementById('newPro').value="";
+	document.getElementById('newPhase').value="";
+	}
+	
+  function myBreak(){
+  alert("It's Time For break !!!");
+	location.reload()
+  }
+  
+function diff() {
+  var vstart = document.getElementById('start').value
+  var vstop = document.getElementById('stop').value
+  var vitime = document.getElementById('intTime').value
+  var result = parseFloat(vstop) - parseFloat(vstart) - parseFloat(vitime)
+  if (!isNaN(result)) {
+    document.getElementById('delta').value = parseFloat(result).toFixed(2)
+  }
+}
+</script>
+  <link rel="stylesheet" href="css/Style.css">
+  <script src="js/runningtime.js"></script>
+  <script src="js/timelog.js"></script>
+  <script src="js/time.js"></script>
+  <script src="js/timetitle.js"></script>
+  <script src="js/main-controller.js"></script>
+  <script src="js/onreadfile-directive.js"></script>
+  <script src="js/main.js"></script>
+
+  <link rel="shortcut icon" type="image/png" href="lib/jasmine-2.1.3/jasmine_favicon.png">
+  <link rel="stylesheet" href="lib/jasmine-2.1.3/jasmine.css">
+  <script src="lib/jasmine-2.1.3/jasmine.js"></script>
+  <script src="lib/jasmine-2.1.3/jasmine-html.js"></script>
+  <script src="lib/jasmine-2.1.3/boot.js"></script>
+
+  <script src="spec/TimeSpec.js"></script>
+  <script src="spec/TitleSpec.js"></script>
+</body>
+
+</html>
